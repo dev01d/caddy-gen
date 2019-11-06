@@ -1,10 +1,7 @@
-language: python
+language: generic
 services: docker
 
-python:
-  - 3.6
-
-before_script:
+script:
   - docker build -t caddy-gen:latest .
   - docker run -d -p 2015:2015 -v /var/run/docker.sock:/tmp/docker.sock:ro --name caddy-gen caddy-gen
   - docker ps | grep -q caddy-gen # there should be a docker process
