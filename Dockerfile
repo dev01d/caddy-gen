@@ -1,7 +1,6 @@
 FROM alpine:3.10.2
 
-LABEL maintainer="Nikita Sobolev <sobolevn@wemake.services>"
-LABEL vendor="wemake.services"
+LABEL maintainer="Jason Behnke <contact@jasonbehnke.io>"
 LABEL version="0.1.0"
 
 ARG CADDY_VERSION="0.10.11"
@@ -21,7 +20,7 @@ RUN apk update && apk upgrade \
 
 # Install Forego
 
- RUN wget --quiet "https://github.com/jwilder/forego/releases/download/v${FOREGO_VERSION}/forego" \
+RUN wget --quiet "https://github.com/jwilder/forego/releases/download/v${FOREGO_VERSION}/forego" \
   && mv ./forego /usr/bin/forego \
   && chmod u+x /usr/bin/forego
 
@@ -33,12 +32,12 @@ RUN wget --quiet "https://github.com/jwilder/docker-gen/releases/download/$DOCKE
   && rm "/docker-gen-alpine-linux-amd64-$DOCKER_GEN_VERSION.tar.gz"
 
 
- # Install Caddy
+# Install Caddy
 
 RUN curl --silent --show-error --fail --location \
-      --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
-      "https://github.com/mholt/caddy/releases/download/v${CADDY_VERSION}/caddy_v${CADDY_VERSION}_linux_amd64.tar.gz" \
-    | tar --no-same-owner -C /usr/bin -xz \
+  --header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o - \
+  "https://github.com/mholt/caddy/releases/download/v${CADDY_VERSION}/caddy_v${CADDY_VERSION}_linux_amd64.tar.gz" \
+  | tar --no-same-owner -C /usr/bin -xz \
   && chmod 0755 /usr/bin/caddy \
   && /usr/bin/caddy -version \
   && apk del .build-dependencies
