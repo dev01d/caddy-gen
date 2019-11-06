@@ -2,14 +2,14 @@ language: generic
 services: docker
 
 script:
-  - docker build -t caddy-gen:latest .
-  - docker run -d -p 2015:2015 -v /var/run/docker.sock:/tmp/docker.sock:ro --name caddy-gen caddy-gen
+  - docker build -t $DOCKER_USERNAME/caddy-gen:latest .
+  - docker run -d -p 2015:2015 -v /var/run/docker.sock:/tmp/docker.sock:ro --name caddy-gen $DOCKER_USERNAME/caddy-gen:latest
   - docker ps | grep -q caddy-gen # there should be a docker process
   - curl 127.0.0.1:2015 # it should be available and return 404
 
 deploy:
   provider: script
-  script: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push caddy-gen:latest
+  script: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push $DOCKER_USERNAME/caddy-gen:latest
   on:
     branch: master
 
