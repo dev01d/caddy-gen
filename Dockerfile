@@ -1,4 +1,4 @@
-FROM alpine:3.10.2
+FROM alpine:3.10.3
 
 LABEL maintainer="Jason Behnke <contact@jasonbehnke.io>"
 LABEL version="0.1.0"
