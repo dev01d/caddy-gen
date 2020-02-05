@@ -3,7 +3,7 @@ FROM alpine:3.11.3
 LABEL maintainer="Jason Behnke <contact@jasonbehnke.io>"
 LABEL version="0.2.0"
 
-ARG CADDY_VERSION="0.10.12"
+ARG CADDY_VERSION="0.11.5"
 ARG FOREGO_VERSION="0.16.1"
 ARG DOCKER_GEN_VERSION="0.7.4"
 
