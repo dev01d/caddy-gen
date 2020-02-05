@@ -1,6 +1,6 @@
 # caddy-gen
 
-[![Build Status](https://travis-ci.org/dev01d/caddy-gen.svg?branch=master)](https://travis-ci.org/dev01d/caddy-gen) [![Dockerhub](https://img.shields.io/docker/pulls/dev01d/caddy-gen.svg)](https://hub.docker.com/r/dev01d/caddy-gen/) [![image size](https://images.microbadger.com/badges/image/dev01d/caddy-gen.svg)](https://microbadger.com/images/dev01d/caddy-gen) [![caddy's version](https://img.shields.io/badge/version-0.10.11-blue.svg)](https://github.com/mholt/caddy/tree/v0.10.11)
+[![Build Status](https://travis-ci.org/dev01d/caddy-gen.svg?branch=master)](https://travis-ci.org/dev01d/caddy-gen) [![Dockerhub](https://img.shields.io/docker/pulls/dev01d/caddy-gen.svg)](https://hub.docker.com/r/dev01d/caddy-gen/) [![image size](https://images.microbadger.com/badges/image/dev01d/caddy-gen.svg)](https://microbadger.com/images/dev01d/caddy-gen) [![caddy's version](https://img.shields.io/badge/version-0.11.5-blue.svg)](https://github.com/mholt/caddy/tree/v0.11.5)
 
 A perfect mix of [`Caddy`](https://github.com/mholt/caddy), [`docker-gen`](https://github.com/jwilder/docker-gen), and [`forego`](https://github.com/jwilder/forego). Inspired by [`nginx-proxy`](https://github.com/jwilder/nginx-proxy).
 
