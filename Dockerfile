@@ -22,7 +22,8 @@ ENV CADDYPATH="/etc/caddy"
 ENV DOCKER_HOST="unix:///tmp/docker.sock"
 
 # Install all dependenices:
-RUN apk update && apk upgrade
+RUN apk update && apk upgrade \
+  && apk add --no-cache bash
 
 COPY --from=build /usr/bin/forego /usr/bin/forego
 COPY --from=build /usr/bin/docker-gen /usr/bin/docker-gen
