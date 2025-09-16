@@ -16,7 +16,7 @@ RUN wget --quiet "https://github.com/nginx-proxy/docker-gen/releases/download/${
   && tar -C /usr/bin -xvzf "docker-gen-alpine-linux-${TARGETARCH}-${DOCKER_GEN_VERSION}.tar.gz"
 
 
-FROM caddy:2.9.1-alpine AS app
+FROM caddy:2.10-alpine AS app
 
 ENV CADDYPATH="/etc/caddy"
 ENV DOCKER_HOST="unix:///tmp/docker.sock"
